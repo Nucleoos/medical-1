@@ -56,6 +56,7 @@ class Base extends MX_Controller {
 	
 	private function menu() {
 
+
 		$menu = array();
 
 		$level_0 	= $this->menu_model->get_parent_menu(array($this->portal_id, $this->user['role_id']));

@@ -7,7 +7,7 @@
 
     <div class="panel">
         <div class="panel-heading">
-            <span class="panel-title"><i class="fa fa-plus"></i>Edit <?php echo $crud_for ?></span>
+            <span class="panel-title"><i class="fa fa-plus"></i>Add <?php echo $crud_for ?></span>
         </div>
         <!-- end .panel-heading section -->
 
