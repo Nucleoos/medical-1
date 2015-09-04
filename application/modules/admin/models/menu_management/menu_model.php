@@ -107,11 +107,11 @@ class Menu_model extends CI_Model {
                 CASE WHEN SUBSTRING(f.permission,3,1) = 1 THEN 'true' ELSE 'false' END as 'update',
                 CASE WHEN SUBSTRING(f.permission,4,1) = 1 THEN 'true' ELSE 'false' END as 'delete'
                 FROM core_menu a
-                LEFT JOIN core_portal b ON b.portal_id = a.portal_id
-                LEFT JOIN core_role c ON c.portal_id = b.portal_id
-                LEFT JOIN core_role_user d ON d.role_id = c.role_id
-                LEFT JOIN core_user e ON e.user_id = d.user_id
-                LEFT JOIN core_permission f ON f.menu_id = a.menu_id AND f.role_id = d.role_id
+                INNER JOIN core_portal b ON b.portal_id = a.portal_id
+                INNER JOIN core_role c ON c.portal_id = b.portal_id
+                INNER JOIN core_role_user d ON d.role_id = c.role_id
+                INNER JOIN core_user e ON e.user_id = d.user_id
+                INNER JOIN core_permission f ON f.menu_id = a.menu_id AND f.role_id = d.role_id
                 WHERE b.portal_id = ? AND c.role_id = ? AND a.parent_id = 0 AND a.menu_st = 'active'
                 ORDER BY a.menu_order ASC";
             $query = $this->db->query($sql, $params);
@@ -135,11 +135,11 @@ class Menu_model extends CI_Model {
                 CASE WHEN SUBSTRING(f.permission,3,1) = 1 THEN 'true' ELSE 'false' END as 'update',
                 CASE WHEN SUBSTRING(f.permission,4,1) = 1 THEN 'true' ELSE 'false' END as 'delete'
                 FROM core_menu a
-                LEFT JOIN core_portal b ON b.portal_id = a.portal_id
-                LEFT JOIN core_role c ON c.portal_id = b.portal_id
-                LEFT JOIN core_role_user d ON d.role_id = c.role_id
-                LEFT JOIN core_user e ON e.user_id = d.user_id
-                LEFT JOIN core_permission f ON f.menu_id = a.menu_id AND f.role_id = d.role_id
+                INNER JOIN core_portal b ON b.portal_id = a.portal_id
+                INNER JOIN core_role c ON c.portal_id = b.portal_id
+                INNER JOIN core_role_user d ON d.role_id = c.role_id
+                INNER JOIN core_user e ON e.user_id = d.user_id
+                INNER JOIN core_permission f ON f.menu_id = a.menu_id AND f.role_id = d.role_id
                 WHERE a.parent_id = ? AND d.role_id = ?
                 AND a.menu_st = 'active'
                 ORDER BY menu_order ASC";
