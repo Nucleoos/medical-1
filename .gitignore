@@ -6,3 +6,4 @@
 */cache/!.htaccess
 
 media/
+application/config/database.php
