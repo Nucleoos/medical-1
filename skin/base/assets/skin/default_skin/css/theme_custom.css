@@ -88,6 +88,25 @@ table.dataTable thead th {
 
 /* End: list on/of form */
 
+/* Horizontal Form */
+
+.form-horizontal .control-label {
+	font-weight: bold;
+}
+
+.form-horizontal .control-label.multi-lines {
+	padding-top: 4px;
+}
+
+.form-horizontal .radio, 
+.form-horizontal .checkbox {
+	min-height: 0;
+}
+
+.form-horizontal .option-group .option {
+	margin: 6px 0;
+}
+
 /* ======================================================= */
 /*  Menu Tree
 /* ======================================================= */
